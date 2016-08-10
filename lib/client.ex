@@ -189,7 +189,7 @@ defmodule Mailgun.Client do
     :string.join(parts, '\r\n')
   end
 
-  def url(path, domain), do: Path.join([domain, path])
+  def url(path, domain), do: domain <> "/" <> path
 
   def request(conf, method, url, user, pass, headers, ctype, body) do
     url  = String.to_char_list(url)
